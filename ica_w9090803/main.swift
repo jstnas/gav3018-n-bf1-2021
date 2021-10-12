@@ -1,4 +1,5 @@
 // Week 1
+/*
 // 2.1
 import Foundation
 
@@ -76,8 +77,10 @@ case "/":
 default:
     print("operation has to be + - * or /")
 }
+*/
 
 // Week 2
+/*
 // 1.0
 class Dog
 {
@@ -157,3 +160,134 @@ let numbers = [1, 2, 3, 4]
 let oddNumbers = numbers.filter{$0 % 2 == 0}
 print(oddNumbers)
 */
+*/
+
+// Week 3
+// 2.2
+class Animal
+{
+    let name: String
+    let age: Int
+    
+    init(_ name: String, _ age: Int)
+    {
+        self.name = name
+        self.age = age
+    }
+}
+
+
+// 2.1
+class Dog : Animal
+{
+    /*
+    func bark()
+    {
+        print("\(self.name) says woof")
+    }
+    */
+    func bark(_ message: String = "woof")
+    {
+        print("\(self.name) says \(message)")
+    }
+
+    func getAge() -> Int
+    {
+        return self.age * 7
+    }
+
+    func getName() -> String
+    {
+        return self.name
+    }
+
+    func getName(_ pref: String) -> String
+    {
+        return pref + self.name
+    }
+}
+
+var d = Dog("Bob", 5)
+d.bark()
+
+// 2.3
+class DwarfPoodle : Dog
+{
+    override func bark(_ message: String = "woof") {
+        print("\(self.name) says \(message)?")
+    }
+}
+
+var p = DwarfPoodle("Rufus", 2)
+p.bark()
+
+// 3.1
+let numbers = [1, 11, 1234, 02, 234, 854]
+
+func average(_ numbers: [Int]) -> Float
+{
+    var average = 0
+    for number in numbers
+    {
+        average += number
+    }
+    return Float(average) / Float(numbers.count)
+}
+
+print(average(numbers))
+
+func minimum(_ numbers: [Int]) -> Int
+{
+    var minimum = numbers[0]
+    for number in numbers
+    {
+        if number < minimum
+        {
+            minimum = number
+        }
+    }
+    return minimum
+}
+
+print(minimum(numbers))
+
+func maximum(_ numbers: [Int]) -> Int
+{
+    var maximum = numbers[0]
+    for number in numbers
+    {
+        if number > maximum
+        {
+            maximum = number
+        }
+    }
+    return maximum
+}
+
+print(maximum(numbers))
+
+// 3.2
+func replace(array: inout [Int], _ from: Int, _ to: Int)
+{
+    for (index, element) in array.enumerated()
+    {
+        if (element == from)
+        {
+            array.remove(at: index)
+            array.insert(to, at: index)
+        }
+    }
+}
+
+var array = [5, 2, 1]
+replace(array: &array, 2, 20)
+print(array)
+
+// 4.1
+func gcd(a: Int, b: Int) {
+    var A = a
+    var B = b
+    while B != 0 {
+        
+    }
+}
