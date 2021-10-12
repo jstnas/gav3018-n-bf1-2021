@@ -77,3 +77,83 @@ default:
     print("operation has to be + - * or /")
 }
 
+// Week 2
+// 1.0
+class Dog
+{
+    var name = ""
+    var age = 0
+    /*
+    func bark()
+    {
+        print("\(self.name) says woof")
+    }
+    */
+    func bark(_ message: String = "woof")
+    {
+        print("\(self.name) says \(message)")
+    }
+
+    func getAge() -> Int
+    {
+        return self.age * 7
+    }
+
+    func getName() -> String
+    {
+        return self.name
+    }
+
+    func getName(_ pref: String) -> String
+    {
+        return pref + self.name
+    }
+}
+
+var d = Dog()
+d.name = "chien"
+d.age = 9
+d.bark()
+// 1.1
+//d = 15 // error: cannot assign to value: 'd' is a 'let' constant
+// 1.2
+d.bark("Hello")
+// 1.4
+print(d.getAge())
+// 1.5
+print(d.getName())
+// 1.6
+print(d.getName("Sir "))
+
+// 2.0
+let celsius: [Double] = [0, -40, 100, 50]
+let farenheit = celsius.map{$0 * 1.8 + 32}
+print(farenheit)
+for d in celsius
+{
+    print(d * 1.8 + 32)
+}
+// 2.1
+/*
+let numbers = [1, 2, 3, 4, 5]
+let sum = numbers.reduce(0)
+{
+    (acc: Int, next: Int) -> Int in
+    return acc + next
+}
+print(sum)
+*/
+// 2.4
+let numbers = [1, 2, 3, 4]
+let product = numbers.reduce(1)
+{
+    (acc: Int, next: Int) -> Int in
+    return acc * next
+}
+print(product)
+// 2.5
+/*
+let numbers = [1, 2, 3, 4]
+let oddNumbers = numbers.filter{$0 % 2 == 0}
+print(oddNumbers)
+*/
